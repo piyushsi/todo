@@ -1,8 +1,9 @@
+
 const ul = document.querySelector('ul')
 const inputText = document.querySelector('.todo')
 let state = JSON.parse(localStorage.getItem('state')) || [];
 const selectall = document.querySelector('.selectall')
-const editInput = document.createElement('input')
+
 var count= 0;
 
 //renderTodos UI develop function
@@ -26,7 +27,7 @@ const renderTodos=(pass) => {
 		button.className="cross"
 		button.textContent='x'
 		button.setAttribute('data-id',todo.id)
-
+		const editInput = document.createElement('input')
 		const editTodo = (event) => {
 			li.replaceChild(editInput,span)
 			console.log(event.target.dataset.id)
@@ -67,12 +68,22 @@ const renderTodos=(pass) => {
 	items()
 }
 
+//random id 
+function getRandomStrings(length) {
+  const value = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  const randoms = [];
+  for(let i=0; i < length; i++) {
+     randoms.push(value[Math.floor(Math.random()*value.length)]);
+  }
+  return randoms.join('');
+}
+
 //add todo function
 function addTodo(e){
 	if (e.keyCode===13 && inputText.value){
 		state.push({
 			completed: false,
-			id : count++,
+			id : getRandomStrings(16),
 			text: inputText.value
 		})
 
