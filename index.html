@@ -6,7 +6,12 @@
 	</head>
 	<body>
 		<div class="main">
-		<h1>todos</h1>
+		<h1 id="todo">todos</h1>
+		<section id="clock">
+			<h4 id="wrapper">12:00:00</h4>
+		</section>
+
+		
 		<a class="selectall">v</a>
 		<input class="todo" placeholder="What needs to be done?" value="">
 		<ul>
@@ -24,7 +29,30 @@
 				<button class="btn completed">Completed</button>
 				<button class="btn clear">Clear Completed</button>
 		</div>
+		<section id="settings">
+			<h2>To create an alarm, enter a time and alarm name</h2>
+
+			<select id="alarm_hours"></select>
+
+			<select id="alarm_minutes"></select>
+
+			<select id="alarm_ampm">
+				<option value="AM">AM</option>
+				<option value="PM">PM</option>
+			</select>
+
+			<input id="alarm_name" type="text" placeholder="Alarm Name" />
+
+			<button id="submit">Submit</button>
+
+
+			<section>
+				<h3 id="alarm_message">You have not set any alarms yet</h3>
+					<ul id="alarm_list"></ul>
+			</section>
 		</div>
+
 	</body>
 	<script type="text/javascript" src="assets/script/main.js"></script>
+	<script type="text/javascript" src="assets/script/clock.js"></script>
 </html>
