@@ -191,7 +191,7 @@ li{
 	position: absolute;
 	top:0;
 	right:2rem;
-	width: 5rem;
+	width: 8rem;
 	display: flex;
 }
 @media all and (max-width: 768px) {
