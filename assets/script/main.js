@@ -1,5 +1,5 @@
-var newaudio = new Audio('../../assets/media/new.mp3');
-var comaudio = new Audio('../../assets/media/com.mp3');
+var newaudio = new Audio('../media/new.mp3');
+var comaudio = new Audio('../media/com.mp3');
 ////////////////////////////////////////clock///////////////////////////////////////////
  // Selectors
     var wrapper = document.getElementById('wrapper');
