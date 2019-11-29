@@ -1,4 +1,45 @@
 
+var newaudio = new Audio('../assets/media/new.mp3');
+var comaudio = new Audio('../assets/media/com.mp3');
+////////////////////////////////////////clock///////////////////////////////////////////
+ // Selectors
+    var wrapper = document.getElementById('wrapper');
+    var alarmHours = document.getElementById('alarm_hours');
+    var alarmMinutes = document.getElementById('alarm_minutes');
+
+
+ // Render initial time, then update every second after
+    renderTime();
+    setInterval(renderTime, 1000);
+ // Render time
+    function renderTime(){
+// create new date object
+        var time = new Date();
+        var ampm = 'AM';
+ // Get values
+        var timeSeconds = time.getSeconds();
+        var timeMinutes = time.getMinutes();
+        var timeHours = time.getHours();
+
+// Format values
+        if (timeHours > 12){
+            timeHours -= 12;
+            ampm = 'PM'
+        }
+
+        if (timeMinutes < 10){
+            timeMinutes = '0' + timeMinutes;
+        }
+
+        if (timeSeconds < 10){
+            timeSeconds = '0' + timeSeconds;
+        }
+
+// Display time
+        wrapper.innerHTML = timeHours + ':' + timeMinutes + ':' + timeSeconds + ' ' + ampm;
+    }
+
+
 const ul = document.querySelector('ul')
 const inputText = document.querySelector('.todo')
 let state = JSON.parse(localStorage.getItem('state')) || [];
@@ -23,6 +64,9 @@ const renderTodos=(pass) => {
 		span.className="list"
 		span.textContent = todo.text;
 		span.setAttribute('data-id',todo.id)
+		const time =document.createElement('span')
+		time.className="time"
+		time.textContent = todo.time;
 		const button =document.createElement('button')
 		button.className="cross"
 		button.textContent='x'
@@ -47,7 +91,7 @@ const renderTodos=(pass) => {
 			}
 		}
 		
-		li.append(input,span,button)
+		li.append(input,time,span,button)
 		ul.append(li)
 		inputText.value = ""
 		button.addEventListener('click',delTodo)
@@ -84,9 +128,10 @@ function addTodo(e){
 		state.push({
 			completed: false,
 			id : getRandomStrings(16),
-			text: inputText.value
+			text: inputText.value,
+			time:wrapper.innerHTML
 		})
-
+		newaudio.play();
 		renderTodos(state)
 	}
 }
@@ -95,6 +140,7 @@ function addTodo(e){
 function delTodo(e){
 	state = state.filter(a => a.id != e.target.dataset.id)
 	renderTodos(state)
+	comaudio.play();
 }
 
 //all completed
@@ -107,6 +153,7 @@ function completed(e){
 
 	})
 	renderTodos(state)
+
 }
 
 
@@ -164,6 +211,7 @@ function total(){
 }
 
 renderTodos(state)
+
 
 
 

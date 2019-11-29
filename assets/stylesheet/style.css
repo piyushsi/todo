@@ -66,6 +66,7 @@ h4{
     font-weight: 100;
     color: rgba(175, 47, 47, 0.15);
     margin: 0;
+
 }
 .todo {
     margin: 0;
@@ -159,11 +160,11 @@ color: grey;
 	display:none;
 
 }
-.selectall {
+img {
 	position: absolute;
 	padding-left:1.5rem;
-	padding-top:.5rem;
-	font-size: 2.5rem;
+	padding-top:.9rem;
+	height: 2rem;
 	color: lightgrey;
 	cursor: cell;
 }
@@ -178,4 +179,21 @@ h1{
 
   100% {left:0px; top:0px;}
 }
+li{
+  position: relative;
+  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .1s; /* Safari 4.0 - 8.0 */
+}
 
+@-webkit-keyframes example {
+  0%   {left:0px; top:600px;}
+
+  100% {left:0px; top:0px;}
+}
+.time{
+	font-size: .8rem;
+	color: lightgrey;
+	position: absolute;
+	top:0;
+	right:2rem;
+}
