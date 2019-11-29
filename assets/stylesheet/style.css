@@ -45,7 +45,8 @@ table {
 body{
 	    background: #f5f5f5;
 }
-#todo{
+.todos{
+	text-align: center;
     width: 100%;
     height: 70%;
     font-size: 10rem;
@@ -54,6 +55,7 @@ body{
     margin: 0;
 }
 h4{
+	text-align: center;
     width: 100%;
     height: 70%;
     font-size: 3rem;
@@ -176,15 +178,9 @@ h1{
 li{
   position: relative;
   -webkit-animation-name: example1; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: .1s; /* Safari 4.0 - 8.0 */
+  -webkit-animation-duration: .01s; /* Safari 4.0 - 8.0 */
 }
 
-@-webkit-keyframes example1 {
- 0%   {left:0px; top:37.5rem;}
-
-  100% {left:0px; top:0px;}
-
-}
 .time{
 	font-size: 1rem;
 	color: lightgrey;
@@ -193,6 +189,13 @@ li{
 	right:2rem;
 	width: 8rem;
 	display: flex;
+}
+ #divContainer, #divResize { 
+            cursor:move; 
+             } 
+.ui-resizable-handle {
+			position: absolute;
+
 }
 @media all and (max-width: 768px) {
   html{

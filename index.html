@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
+
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+
 <link rel="stylesheet" type="text/css" href="assets/stylesheet/style.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<head>
 		<title>ToDo</title>
 	</head>
 	<body>
-		<div class="main">
-		<h1 id="todo">todos</h1>
+		<div id="head" class="main">
+		<h1 id="divContainer"  class="todos">todos</h1>
 		<section id="clock">
 			<h4 class="h4" id="wrapper">00:00:00</h4>
 		</section>
@@ -33,5 +38,36 @@
 		</div>
 
 	</body>
+
+<script>
+    var element_pos = 0;    // POSITION OF THE NEWLY CREATED ELEMENTS.
+    var iCnt = 0;
+    $(document).ready(function() {
+
+        $(function() { $('#divContainer').draggable(); });
+        $(function() { $('#head').draggable(); });
+        $(function() { $('#clock').draggable(); });
+        $(function() { $("#divResize").draggable().resizable(); });
+
+        // CREATE MORE DIV, WITH 'ABSOLUTE' POSITIONING.
+        $('#btClickMe').click(function() {
+
+            var dynamic_div = $(document.createElement('div')).css({
+                border: '1px dashed', position: 'absolute', left: element_pos, 
+                top: $('#divContainer').height() + 1,
+                width: '12', height: '12', padding: '0', margin: '0'
+            });
+
+            element_pos = element_pos + $('#divContainer').width() + 20;
+
+            $(dynamic_div).append('You can drag me too');
+            
+            // APPEND THE NEWLY CREATED DIV TO "divContainer".
+            $(dynamic_div).appendTo('#divContainer').draggable();
+
+            iCnt = iCnt + 1;
+        });
+    });
+</script>
 	<script type="text/javascript" src="assets/script/main.js"></script>
 </html>
