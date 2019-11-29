@@ -1,6 +1,11 @@
 var newaudio = new Audio('../todo/assets/media/new.mp3');
 var comaudio = new Audio('../todo/assets/media/com.mp3');
 ////////////////////////////////////////clock///////////////////////////////////////////
+var cYear =new Date().getFullYear()-2000
+var cDate =new Date().getDate()
+var cMonth =new Date().getMonth()+1
+var fDate = cDate+'/'+cMonth+'/'+cYear
+
  // Selectors
     var wrapper = document.getElementById('wrapper');
     var alarmHours = document.getElementById('alarm_hours');
@@ -128,7 +133,7 @@ function addTodo(e){
 			completed: false,
 			id : getRandomStrings(16),
 			text: inputText.value,
-			time:wrapper.innerHTML
+			time:wrapper.innerHTML+' '+fDate
 		})
 		newaudio.play();
 		renderTodos(state)
@@ -152,7 +157,6 @@ function completed(e){
 
 	})
 	renderTodos(state)
-
 }
 
 

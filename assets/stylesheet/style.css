@@ -132,7 +132,7 @@ color: grey;
 	opacity:.2;
 	
 }
-.cbox:checked  .list {
+.listCheck {
   text-decoration: line-through;
 }
 .btn{
@@ -164,25 +164,26 @@ img {
 }
 h1{
   position: relative;
-  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-name: example2; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: 2s; /* Safari 4.0 - 8.0 */
 }
 
-@-webkit-keyframes example {
+@-webkit-keyframes example2 {
   0%   {left:0px; top:37.5rem;}
 
   100% {left:0px; top:0px;}
 }
 li{
   position: relative;
-  -webkit-animation-name: example; /* Safari 4.0 - 8.0 */
+  -webkit-animation-name: example1; /* Safari 4.0 - 8.0 */
   -webkit-animation-duration: .1s; /* Safari 4.0 - 8.0 */
 }
 
-@-webkit-keyframes example {
-  0%   {left:0px; top:37.5rem;}
+@-webkit-keyframes example1 {
+ 0%   {left:0px; top:37.5rem;}
 
   100% {left:0px; top:0px;}
+
 }
 .time{
 	font-size: 1rem;
@@ -190,6 +191,8 @@ li{
 	position: absolute;
 	top:0;
 	right:2rem;
+	width: 5rem;
+	display: flex;
 }
 @media all and (max-width: 768px) {
   html{
