@@ -48,7 +48,7 @@ body{
 #back{
    background-image:url('');
    background-size:cover;
-   background-position: center;
+   background-position: fixed;
 }
 #changeBack{
 	position: absolute;
