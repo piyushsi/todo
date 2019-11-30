@@ -10,7 +10,7 @@
 	<head>
 		<title>ToDo</title>
 	</head>
-	<body>
+	<body id='back'>
 		<div id="head" class="main">
 		<h1 id="divContainer"  class="todos">todos</h1>
 		<section id="clock">
@@ -36,8 +36,10 @@
 				<button class="btn clear">Clear Completed</button>
 		</div>
 		</div>
-
+		<!-- <iframe id ="iframe" src="index.html"></iframe> -->
+<div id="changeBack">Chanage Wallpaper<input type='file' id='getval' name="background-image" /></div>
 	</body>
+
 
 <script>
     var element_pos = 0;    // POSITION OF THE NEWLY CREATED ELEMENTS.
@@ -45,6 +47,7 @@
     $(document).ready(function() {
 
         $(function() { $('#divContainer').draggable(); });
+        $(function() { $('#iframe').draggable(); });
         $(function() { $('#head').draggable(); });
         $(function() { $('#clock').draggable(); });
         $(function() { $("#divResize").draggable().resizable(); });
@@ -69,5 +72,23 @@
         });
     });
 </script>
+
+
+<script type="text/javascript">
+	document.getElementById('getval').addEventListener('change', readURL, true);
+function readURL(){
+   var file = document.getElementById("getval").files[0];
+   var reader = new FileReader();
+   reader.onloadend = function(){
+      document.getElementById('back').style.backgroundImage = "url(" + reader.result + ")";        
+   }
+   if(file){
+      reader.readAsDataURL(file);
+    }else{
+    }
+}
+</script>
+
+
 	<script type="text/javascript" src="assets/script/main.js"></script>
 </html>

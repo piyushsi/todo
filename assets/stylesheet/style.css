@@ -45,6 +45,17 @@ table {
 body{
 	    background: #f5f5f5;
 }
+#back{
+   background-image:url('');
+   background-size:cover;
+   background-position: center;
+}
+#changeBack{
+	position: absolute;
+	right:0;
+	bottom: -20px;
+
+}
 .todos{
 	text-align: center;
     width: 100%;
@@ -193,10 +204,15 @@ li{
  #divContainer, #divResize { 
             cursor:move; 
              } 
-.ui-resizable-handle {
+/*.ui-resizable-handle {
 			position: absolute;
 
-}
+}*/
+/*#iframe{
+	height: 25rem;
+	width: 25rem;
+	position: absolute;
+}*/
 @media all and (max-width: 768px) {
   html{
   	font-size: 10px;
