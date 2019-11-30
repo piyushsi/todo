@@ -1,7 +1,7 @@
-// var newaudio = new Audio('../todo/assets/media/new.mp3');
-var newaudio = new Audio('/home/piyush/Documents/AltCampus/todo state/assets/media/new.mp3');
-// var comaudio = new Audio('../todo/assets/media/com.mp3');
-var comaudio = new Audio('/home/piyush/Documents/AltCampus/todo state//assets/media/com.mp3');
+var newaudio = new Audio('../todo/assets/media/new.mp3');
+// var newaudio = new Audio('/home/piyush/Documents/AltCampus/todo state/assets/media/new.mp3');
+var comaudio = new Audio('../todo/assets/media/com.mp3');
+// var comaudio = new Audio('/home/piyush/Documents/AltCampus/todo state//assets/media/com.mp3');
 ////////////////////////////////////////clock///////////////////////////////////////////
 var cYear =new Date().getFullYear()-2000
 var cDate =new Date().getDate()
